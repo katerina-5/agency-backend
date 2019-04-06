@@ -6,3 +6,7 @@ const pool = new Pool({
     password: 'edtR-DTl2XtTW1Peun_kBmEvec-Wyejf',
     port: 5432,
 });
+
+module.exports = {
+    pool
+}
