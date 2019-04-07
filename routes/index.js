@@ -1,5 +1,5 @@
 // const middlewareAuth = require('../middleware/auth');
-const home = require('./home');
+const homepage = require('./homepage');
 // const auth = require('./auth');
 const contracts = require('./contracts');
 const customers = require('./customers');
@@ -9,9 +9,15 @@ const payments = require('./payments');
 const real_estate_objects = require('./realestateobjects');
 const reviews = require('./reviews');
 const addresses = require('./addresses');
+const houses = require('./houses');
+const house_categories = require('./housecategories');
+const offices = require('./offices');
+const office_categories = require('./officecategories');
+const apartments = require('./apartments');
+const apartment_categories = require('./apartmentcategories');
 
 module.exports = function (app) {
-  app.use('/', home);
+  app.use('/', homepage);
   // app.use('/', auth);
   //   app.use('/users', [middlewareAuth, users]);
   app.use('/contracts', contracts);
@@ -21,7 +27,13 @@ module.exports = function (app) {
   app.use('/managers', managers);
   // app.use('/managers', [middlewareAuth, managers]);
   app.use('/payments', payments);
-  app.use('/realestateobjects', real_estate_objects);
+  app.use('/real_estate_objects', real_estate_objects);
   app.use('/reviews', reviews);
   app.use('/addresses', addresses);
+  app.use('/houses', houses);
+  app.use('/house_categories', house_categories);
+  app.use('/offices', offices);
+  app.use('/office_categories', office_categories);
+  app.use('/apartments', apartments);
+  app.use('/apartment_categories', apartment_categories);
 };
