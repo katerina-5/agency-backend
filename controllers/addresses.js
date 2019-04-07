@@ -70,6 +70,13 @@ function address_update(request, response, next) {
 
     const zip_code = request.params.id;
     const { city, region, street, addressline1, addressline2 } = request.body;
+    // const params = {} = request.body;
+    // console.log(request.body);
+    // console.log(params);
+
+    // if (params.city == "" || 0 || undefined) {
+    //     console.log("CITY IS NOT DEFINED!");
+    // }
 
     pool.query('UPDATE addresses SET city = $2, region = $3, street = $4, addressline1 = $5, addressline2 = $6 WHERE zip_code = $1',
         [zip_code, city, region, street, addressline1, addressline2],
